@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_inserta_asignacion_tramite,Inserta asignacion de tramite,model_asignacion_tramite_gestion,asignacion_tramites_group_user,1,1,1,0
+access_inserta_asignacion_tramite_DAS,Inserta asignacion de tramite DAS,model_asignacion_tramite_gestion,asignacion_tramites_DAS_group_user,1,1,1,0
+access_inserta_asignacion_tramite_DJ,Inserta asignacion de tramite DJ,model_asignacion_tramite_gestion,asignacion_tramites_DJ_group_user,1,1,1,0
+access_inserta_asignacion_tramite_PRE,Inserta asignacion de tramite PRE,model_asignacion_tramite_gestion,asignacion_tramites_PRE_group_user,1,1,1,0
+access_inserta_asignacion_tramite_SE,Inserta asignacion de tramite SE,model_asignacion_tramite_gestion,asignacion_tramites_SE_group_user,1,1,1,0
+
+

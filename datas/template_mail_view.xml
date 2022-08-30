@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data noupdate="0">
+        <!--ASIGNACION DE SOLICITUDES-->
+        <record id="asignacion_folio" model="mail.template">
+           <field name="name">Asignacion de Folios</field><!-- -->
+           <field name="email_from">soportedesk@jap.cdmx.gob.mx</field><!--${object.user_id.email} -->
+           <field name="subject">Reasignación de folio</field>
+           <field name="email_to">${object.RefIdUserActual.login}</field><!--campo del usuario que existe en el modulo de users: ${object.partner_id.email}-->
+           <field name="model_id" ref="asignacion.model_asignacion_tramite_gestion"/><!--MODULO Y NOMBRE DEL MODELO (TABLA) -->
+           <field name="auto_delete" eval="True"/><!--SE ENVIA Y SE BORRA EL REGISTRO, NO SE GUARDA EN LA CUENTA SALIENTE -->
+
+            <!-- ${object.correosavisos} -->
+           <field name="body_html">
+               <![CDATA[
+               <img class="img-fluid o_we_custom_image d-block mx-auto" src="https://www.jap.cdmx.gob.mx/portal/images/sampledata/logosicos/logox.png?access_token=2c43a90d-b4be-4361-9183-97f227560849" style="width: 50%;" data-original-title="" title="" aria-describedby="tooltip975751"><br><br>
+
+               <div class="card">
+
+                <div class="card-body">
+                <div style="text-align: left;">
+                    <div style="text-align: right;"><b>Folio: ${object.RefIdGestion.RefidSolicitud}</b><br></div><br>
+
+                El usuario de ${object.create_uid.display_name}, ha realizado la reasignación del trámite ${object.RefIdTipoTram.descripcion}, relacionado a la Institución <b>${object.RefIdIAP.name}</b>
+
+                <br><br>
+                Es necesario que ingrese al módulo correspondiente que se encuentra en la plataforma "Tramita Digital", dando clic <a href="https://tramitadigital.jap.cdmx.gob.mx">aquí</a> para continuar con el análisis del trámite.
+            </div>
+            </div>
+
+            ]]></field>
+        </record>
+
+
+    </data>
+</odoo>

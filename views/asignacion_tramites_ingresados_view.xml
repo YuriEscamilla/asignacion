@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!--TREE -->
+    <record id="asignacion_tramites_ingresados_gestion" model="ir.ui.view">
+        <field name="name">solicitudesbase.tree.view</field><!--es la etiequeta del nombre de la vista -->
+        <field name="model">tramite.gestion</field><!--esta etiqueta se refiere a nuestro modelo -->
+
+
+        <field name="arch" type="xml">
+            <!-- aqui vamos a definir el tipo de vista-->
+            <tree string="EstatusTram"  create="false">
+                <field name="id" string="Consecutivo"/>
+                <field name="RefIdIAP"/>
+                <field name="RefIdUsuario"/>
+
+                <field name="RefIdTipoTram"/>
+
+                <field name="RefidSolicitud"/>
+                <field name="origeningreso" string="Forma de ingreso"/>
+
+
+                <button name="btn_Asignar_solicitud" type="object" string="Asignar solicitud"  class="fa fa-find  bg-primary"/>
+
+            </tree>
+        </field>
+    </record>
+
+</odoo>

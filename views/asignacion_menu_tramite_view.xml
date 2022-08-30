@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- MENU PARA ASIGNACION DE LA DAS -->
+    <record id="asignacion_tramites_DAS_action" model="ir.actions.act_window">
+        <field name="name">Asignación de Trámites DAS</field>
+        <field name="res_model">tramite.gestion</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('RefIdTipoTram','!=',34),('EstatusAsunto','=','activo'),('RefIdUsuario.direccionuser_id','=',4)]</field>
+        <field name="view_id" ref="asignacion_tramites_ingresados_gestion"/>
+    </record>
+
+    <!-- MENU PARA ASIGNACION DE LA DJ -->
+    <record id="asignacion_tramites_DJ_action" model="ir.actions.act_window">
+        <field name="name">Asignación de DJ</field>
+        <field name="res_model">tramite.gestion</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('RefIdTipoTram','!=',34),('EstatusAsunto','=','activo'),('RefIdUsuario.direccionuser_id','=',5)]</field>
+        <!--<field name="domain">[('RefIdTipoTram','!=',34),'|',('RefIdUsuario.direccionuser_id','=',5),('RefIdTipoTram.direccionresponsable_id','=',5),('EstatusAsunto','=','activo')]</field> -->
+        <field name="view_id" ref="asignacion_tramites_ingresados_gestion"/>
+    </record>
+
+    <!-- MENU DE ASIGNACION PARA PRESIDENCIA-->
+    <record id="asignacion_tramites_PRE_action" model="ir.actions.act_window">
+        <field name="name">Asignación de PRESIDENCIA</field>
+        <field name="res_model">tramite.gestion</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('RefIdTipoTram','!=',34),('EstatusAsunto','=','activo'),('RefIdUsuario.direccionuser_id','=',1)]</field>
+        <field name="view_id" ref="asignacion_tramites_ingresados_gestion"/>
+    </record>
+
+
+    <!-- MENU DE ASIGNACION DE SE -->
+    <record id="asignacion_tramites_SE_action" model="ir.actions.act_window">
+        <field name="name">Asignación de Secretaria Ejecutiva</field>
+        <field name="res_model">tramite.gestion</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('RefIdTipoTram','!=',34),('EstatusAsunto','=','activo'),('RefIdUsuario.direccionuser_id','=',2)]</field>
+        <field name="view_id" ref="asignacion_tramites_ingresados_gestion"/>
+    </record>
+
+
+
+    <!-- MENU PARA ACCION DE LA DTIC - GENERAL -->
+    <record id="asignacion_tramites_action" model="ir.actions.act_window">
+        <field name="name">Asignación GENERAL</field>
+        <field name="res_model">tramite.gestion</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('RefIdTipoTram','!=',34),('EstatusAsunto','=','activo')]</field>
+        <field name="view_id" ref="asignacion_tramites_ingresados_gestion"/>
+    </record>
+
+    <menuitem name="Reasignación de Trámites" id="asignacion_tramites_menu" sequence="0" web_icon="asignacion,static/description/icon.png"  />
+    <!-- MENU IAP-->
+        <menuitem name="Solicitudes ingresadas DAS" id="asignacion_solicitudes_DAS_menu" parent="asignacion_tramites_menu" action="asignacion_tramites_DAS_action" groups="asignacion_tramites_DAS_group_user" />
+        <menuitem name="Solicitudes ingresadas DJ" id="asignacion_solicitudes_dj_menu" parent="asignacion_tramites_menu" action="asignacion_tramites_DJ_action" sequence="2" groups="asignacion_tramites_DJ_group_user"/>
+        <menuitem name="Solicitudes ingresadas PRE" id="asignacion_solicitudes_pre_menu" parent="asignacion_tramites_menu" action="asignacion_tramites_PRE_action" sequence="2" groups="asignacion_tramites_PRE_group_user"/>
+        <menuitem name="Solicitudes ingresadas SE" id="asignacion_solicitudes_se_menu" parent="asignacion_tramites_menu" action="asignacion_tramites_SE_action" sequence="2" groups="asignacion_tramites_SE_group_user"/>
+</odoo>
+

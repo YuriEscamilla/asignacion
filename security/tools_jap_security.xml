@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--CATEGORIA DE SEGURIDAD  -->
+    <record id="module_asignacion_category" model="ir.module.category">
+        <field name="name">ASIGNACION DE TRAMITES</field>
+    </record>
+    <!-- ASIGNACION DE TRAMITES-->
+    <record id="asignacion_tramites_group_user" model="res.groups">
+        <field name="name">Asignación de tramite GENERAL</field>
+        <field name="category_id" ref="module_asignacion_category"/>
+        <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+    </record>
+
+    <!-- ASIGNACION DE TRAMITE DAS-->
+    <record id="asignacion_tramites_DAS_group_user" model="res.groups">
+        <field name="name">Asignación de tramite DAS</field>
+        <field name="category_id" ref="module_asignacion_category"/>
+        <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+    </record>
+
+    <!-- ASIGNACION DE TRAMITE DJ-->
+    <record id="asignacion_tramites_DJ_group_user" model="res.groups">
+        <field name="name">Asignación de tramite DJ</field>
+        <field name="category_id" ref="module_asignacion_category"/>
+        <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+    </record>
+
+    <!-- ASIGNACION DE PRESIDENCIA -->
+    <record id="asignacion_tramites_PRE_group_user" model="res.groups">
+        <field name="name">Asignación de tramite PRE</field>
+        <field name="category_id" ref="module_asignacion_category"/>
+        <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+    </record>
+
+
+    <!-- ASIGNACION SECRETARIA EJECUTIVA -->
+    <record id="asignacion_tramites_SE_group_user" model="res.groups">
+        <field name="name">Asignación de tramite SE</field>
+        <field name="category_id" ref="module_asignacion_category"/>
+        <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+    </record>
+</odoo>
